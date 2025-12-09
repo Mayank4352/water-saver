@@ -38,4 +38,5 @@ class AppColors {
       Color.fromARGB(255, 176, 228, 234);
   static const Color textGradientColors = Color.fromARGB(255, 40, 153, 245);
   static const Color inactivePageColor = Color.fromARGB(255, 44, 110, 198);
+  // static const Color activePageColor = Color.fromARGB(255, 34, 164, 178);
 }

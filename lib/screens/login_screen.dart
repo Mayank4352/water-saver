@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/controllers/auth_controller.dart';
 import 'package:water_saver/providers/app_user_controller_provider.dart';
+import 'package:water_saver/theme/app_themes.dart';
 
 class LoginScreen extends ConsumerWidget {
   LoginScreen({super.key});
@@ -16,7 +17,7 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      backgroundColor: const Color(0xFF071526),
+      backgroundColor: const Color.fromARGB(255, 37, 196, 214),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 7.w),
         child: SizedBox(
@@ -35,7 +36,7 @@ class LoginScreen extends ConsumerWidget {
                 style: TextStyle(
                   fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: AppColors.textGradientColors,
                 ),
               ),
               const SizedBox(height: 10),
@@ -43,7 +44,7 @@ class LoginScreen extends ConsumerWidget {
                 "Let's dive in into your account",
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white70,
+                  color: AppColors.textGradientColors,
                 ),
               ),
               SizedBox(height: 2.h),

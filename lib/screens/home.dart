@@ -6,6 +6,7 @@ import 'package:water_saver/controllers/app_user_controller.dart';
 import 'package:water_saver/models/app_user.dart';
 import 'package:water_saver/providers/app_user_controller_provider.dart';
 import 'package:water_saver/models/user_data_upload.dart';
+import 'package:water_saver/theme/app_themes.dart';
 import 'package:water_saver/widgets/home_page/tank_widget.dart';
 import 'package:water_saver/widgets/home_page/motor_controls.dart';
 import 'package:water_saver/widgets/home_page/insights.dart';
@@ -110,10 +111,10 @@ class _HomePageState extends ConsumerState<HomePage> {
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         title: Text(
-          'Your Tank Details',
+          'Home',
           style: TextStyle(
               // fontSize: 14.sp,
-              color: const Color(0xFFE2E8F0),
+              color: AppColors.textGradientColors,
               fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.transparent,
@@ -164,20 +165,20 @@ class _HomePageState extends ConsumerState<HomePage> {
                 }
 
                 final motorLimit = appUser.userDataUpload.motorOn != 'yes';
-                // if (motorLimit) {
-                //   final allowed =
-                //       await appUserController.canTurnMotorOn(appUser);
-                //   if (!allowed) {
-                //     if (!mounted) return;
-                //     messenger.showSnackBar(
-                //       const SnackBar(
-                //         content: Text(
-                //             'Manual ON limit reached (3 times/24h). Try later.'),
-                //       ),
-                //     );
-                //     return;
-                //   }
-                // }
+                if (motorLimit) {
+                  final allowed =
+                      await appUserController.canTurnMotorOn(appUser);
+                  if (!allowed) {
+                    if (!mounted) return;
+                    messenger.showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                            'Manual ON limit reached (3 times/24h). Try later.'),
+                      ),
+                    );
+                    return;
+                  }
+                }
 
                 await appUserController.updateMotorState(
                   motorLimit,

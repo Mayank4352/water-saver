@@ -62,26 +62,22 @@ class _WaterTankWidgetState extends State<WaterTankWidget>
       _bubbleController.stop();
       return;
     }
-
-    setState(() {
-      if (_shouldGenerateBubbles && _random.nextDouble() < 0.028) {
-        _bubbles.add(Bubble(
-          x: _random.nextDouble() * 0.7 + 0.15,
-          y: 1.0,
-          size: _random.nextDouble() * 4,
-          speed: _random.nextDouble() * 0.01,
-          opacity: _random.nextDouble() * 0.3 + 0.6,
-        ));
-      }
-      for (var bubble in _bubbles) {
-        bubble.y -= bubble.speed;
-        bubble.x = bubble.x.clamp(0.08, 0.92);
-        bubble.size += (_random.nextDouble() - 0.5) * 0.1;
-        bubble.size = bubble.size.clamp(3.0, 14.0);
-      }
-      final waterSurface = 1 - (widget.fillPercentage / 100);
-      _bubbles.removeWhere((b) => b.y < waterSurface + 0.02);
-    });
+    if (_shouldGenerateBubbles && _random.nextDouble() < 0.028) {
+      _bubbles.add(Bubble(
+        x: _random.nextDouble() * 0.7 + 0.15,
+        y: 1.0,
+        size: _random.nextDouble() * 4,
+        speed: _random.nextDouble() * 0.01,
+        opacity: _random.nextDouble() * 0.3 + 0.6,
+      ));
+    }
+    for (var bubble in _bubbles) {
+      bubble.y -= bubble.speed;
+      bubble.size += (_random.nextDouble() - 0.5) * 0.1;
+      bubble.size = bubble.size.clamp(3.0, 14.0);
+    }
+    final waterSurface = 1 - (widget.fillPercentage / 100);
+    _bubbles.removeWhere((b) => b.y < waterSurface + 0.02);
   }
 
   @override
@@ -158,14 +154,19 @@ class _WaterTankWidgetState extends State<WaterTankWidget>
                   child: SizedBox(
                     width: constraints.maxWidth * 0.4,
                     height: constraints.maxHeight * 0.9,
-                    child: Water3DWaveWidget(
-                      fillPercentage: widget.fillPercentage / 100,
-                      size: Size(
-                        constraints.maxWidth * 0.4,
-                        constraints.maxHeight * 0.9,
-                      ),
-                      bubbles: _bubbles,
-                      isMotorOn: widget.isMotorOn,
+                    child: AnimatedBuilder(
+                      animation: _bubbleController,
+                      builder: (context, child) {
+                        return Water3DWaveWidget(
+                          fillPercentage: widget.fillPercentage / 100,
+                          size: Size(
+                            constraints.maxWidth * 0.4,
+                            constraints.maxHeight * 0.9,
+                          ),
+                          bubbles: _bubbles,
+                          isMotorOn: widget.isMotorOn,
+                        );
+                      },
                     ),
                   ),
                 ),
