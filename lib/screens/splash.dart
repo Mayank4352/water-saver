@@ -8,6 +8,7 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/providers/app_user_controller_provider.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
@@ -30,28 +31,18 @@ class _SplashScreenRefactoredState extends ConsumerState<SplashScreen> {
     setState(() {
       _isInitializing = true;
     });
-
-    // Add minimum splash delay for better UX
     await Future.delayed(const Duration(seconds: 1));
-
-    // Step 1: Check if user is logged in
     final User? currentUser = FirebaseAuth.instance.currentUser;
     _isUserLoggedIn = currentUser != null;
-
     if (_isUserLoggedIn) {
-      // Step 2: If user is logged in, instantiate appUserControllerProvider
       try {
         log('User is logged in, initializing appUserControllerProvider...');
-        // This will trigger the build method of AppUserController
         await ref.read(appUserControllerProvider.future);
         log('appUserControllerProvider initialized successfully');
       } catch (e) {
         log('Error initializing appUserControllerProvider: $e');
-        // Continue with routing even if provider initialization fails
       }
     }
-
-    // Step 3: Use routing logic based on login status
     if (mounted) {
       await _performRouting(_isUserLoggedIn);
     }
@@ -65,7 +56,6 @@ class _SplashScreenRefactoredState extends ConsumerState<SplashScreen> {
     final router = GoRouter.of(context);
 
     if (isLoggedIn) {
-      // User is logged in - check device and calibration status
       final storage = GetIt.I<FlutterSecureStorage>();
       final deviceId = await storage.read(key: 'deviceId') ?? '';
 
@@ -87,7 +77,6 @@ class _SplashScreenRefactoredState extends ConsumerState<SplashScreen> {
         router.go('/home');
       }
     } else {
-      // User is not logged in - check onboarding status
       bool isOnboardingComplete = bool.parse(
           await GetIt.I<FlutterSecureStorage>()
                   .read(key: "isOnboardingComplete") ??
@@ -120,7 +109,7 @@ class _SplashScreenRefactoredState extends ConsumerState<SplashScreen> {
                   if (_isInitializing && _isUserLoggedIn) ...[
                     SizedBox(height: 3.h),
                     Text(
-                      'Initializing user data...',
+                      AppLocalizations.of(context)!.initializingUserData,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16.sp,

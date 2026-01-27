@@ -3,8 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/providers/app_user_controller_provider.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 import 'package:water_saver/widgets/adjustments_page/tank_setting.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class AdjustmentsPage extends ConsumerWidget {
   const AdjustmentsPage({super.key});
@@ -18,7 +19,7 @@ class AdjustmentsPage extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'Adjustments',
+          AppLocalizations.of(context)!.adjustments,
           style: TextStyle(
             fontFamily: GoogleFonts.inter().fontFamily,
             fontSize: 18.sp,
@@ -41,7 +42,7 @@ class AdjustmentsPage extends ConsumerWidget {
                 Padding(
                   padding: EdgeInsets.all(constraints.maxHeight * 0.015),
                   child: Text(
-                    "Kindly fill the required details below",
+                    AppLocalizations.of(context)!.fillRequiredDetails,
                     style: TextStyle(
                       fontFamily: GoogleFonts.inter().fontFamily,
                       fontSize: 16.sp,
@@ -51,7 +52,7 @@ class AdjustmentsPage extends ConsumerWidget {
                 ),
                 SizedBox(height: constraints.maxHeight * 0.02),
                 TankSettingsWidget(
-                  title: "Roof Top Tank",
+                  title: AppLocalizations.of(context)!.roofTopTank,
                   motorOffValue: double.parse(
                       appUserData.requireValue.userDataReceive.rftThUpPercent),
                   motorOnValue: double.parse(
@@ -61,7 +62,7 @@ class AdjustmentsPage extends ConsumerWidget {
                 ),
                 SizedBox(height: constraints.maxHeight * 0.02),
                 TankSettingsWidget(
-                  title: "Reservoir",
+                  title: AppLocalizations.of(context)!.reservoir,
                   motorOffValue: null,
                   motorOnValue: double.parse(
                       appUserData.requireValue.userDataReceive.rsvThDnPercent),
@@ -107,7 +108,8 @@ class AdjustmentsPage extends ConsumerWidget {
                                           SizedBox(width: 2.w),
                                           Flexible(
                                             child: Text(
-                                              "Saving Unsuccessful!",
+                                              AppLocalizations.of(context)!
+                                                  .savingUnsuccessful,
                                               style: TextStyle(
                                                   fontSize: 16.sp,
                                                   fontWeight: FontWeight.bold),
@@ -121,8 +123,8 @@ class AdjustmentsPage extends ConsumerWidget {
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: const Text(
-                                        "OK",
+                                      child: Text(
+                                        AppLocalizations.of(context)!.ok,
                                         style: TextStyle(
                                             color: Colors.blue,
                                             fontWeight: FontWeight.bold),
@@ -173,7 +175,8 @@ class AdjustmentsPage extends ConsumerWidget {
                                         SizedBox(width: 2.w),
                                         Flexible(
                                           child: Text(
-                                            "Saved Successfully!",
+                                            AppLocalizations.of(context)!
+                                                .savingSuccessful,
                                             style: TextStyle(
                                                 fontSize: 16.sp,
                                                 fontWeight: FontWeight.bold),
@@ -187,8 +190,8 @@ class AdjustmentsPage extends ConsumerWidget {
                                     onPressed: () {
                                       Navigator.pop(context);
                                     },
-                                    child: const Text(
-                                      "OK",
+                                    child: Text(
+                                      AppLocalizations.of(context)!.ok,
                                       style: TextStyle(
                                           color: Colors.blue,
                                           fontWeight: FontWeight.bold),
@@ -210,7 +213,7 @@ class AdjustmentsPage extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(20)),
                   ),
                   child: Text(
-                    "Save",
+                    AppLocalizations.of(context)!.save,
                     style: TextStyle(
                       fontFamily: GoogleFonts.inter().fontFamily,
                       fontSize: 16.sp,

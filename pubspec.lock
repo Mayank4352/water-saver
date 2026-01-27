@@ -33,15 +33,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.13.10"
-  animated_text_kit:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "790250e7c6a14a1feadfc30dcca2247b3addeec5"
-      url: "https://github.com/M4dhav/Animated-Text-Kit.git"
-    source: git
-    version: "4.3.0"
   args:
     dependency: transitive
     description:
@@ -471,6 +462,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
+  flutter_localizations:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_riverpod:
     dependency: "direct main"
     description:
@@ -785,15 +781,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.0-dev.4"
-  liquid_progress_indicator_v2:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: multiple-waves
-      resolved-ref: a9d85f869ee793a02f3adceed726f92e7b96623e
-      url: "https://github.com/M4dhav/liquid_progress_indicator_v2.git"
-    source: git
-    version: "0.5.0"
   logging:
     dependency: transitive
     description:

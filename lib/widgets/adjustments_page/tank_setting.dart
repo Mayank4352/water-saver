@@ -3,7 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_glass_renderer/liquid_glass_renderer.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 
 class TankSettingsWidget extends ConsumerWidget {
   final String title;
@@ -39,6 +40,7 @@ class TankSettingsWidget extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
+              Text("helo"),
               Text(
                 title,
                 style: TextStyle(
@@ -52,14 +54,14 @@ class TankSettingsWidget extends ConsumerWidget {
               if (motorOffValue != null && onMotorOffChanged != null)
                 _buildSliderSection(
                   context,
-                  label: "Level Threshold: Motor Off",
+                  label: AppLocalizations.of(context)!.motorOffThreshold,
                   value: motorOffValue ?? 0,
                   onChanged: (value) =>
                       onMotorOffChanged!(value < 2 ? 2 : value),
                 ),
               _buildSliderSection(
                 context,
-                label: "Level Threshold: Motor On",
+                label: AppLocalizations.of(context)!.motorOnThreshold,
                 value: motorOnValue,
                 onChanged: (value) => onMotorOnChanged(value < 1 ? 1 : value),
               ),
@@ -89,7 +91,7 @@ class TankSettingsWidget extends ConsumerWidget {
                         SizedBox(width: 2.w),
                         Expanded(
                           child: Text(
-                            "Motor off threshold must be greater than motor on threshold",
+                            AppLocalizations.of(context)!.thresholdValidation,
                             style: TextStyle(
                               fontFamily: GoogleFonts.inter().fontFamily,
                               color: Colors.red,

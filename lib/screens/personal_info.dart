@@ -4,7 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_glass_renderer/liquid_glass_renderer.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/providers/app_user_controller_provider.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class PersonalInfoScreen extends ConsumerWidget {
   const PersonalInfoScreen({super.key});
@@ -25,7 +26,7 @@ class PersonalInfoScreen extends ConsumerWidget {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             title: Text(
-              'Profile',
+              AppLocalizations.of(context)!.profile,
               style: TextStyle(
                 fontFamily: GoogleFonts.inter().fontFamily,
                 fontSize: 18.sp,
@@ -48,11 +49,12 @@ class PersonalInfoScreen extends ConsumerWidget {
                 children: [
                   const Icon(Icons.error, size: 64, color: Colors.red),
                   const SizedBox(height: 16),
-                  Text('Error: $error'),
+                  Text(AppLocalizations.of(context)!
+                      .errorWithMessage(error.toString())),
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () => ref.invalidate(appUserControllerProvider),
-                    child: const Text('Retry'),
+                    child: Text(AppLocalizations.of(context)!.retryButton),
                   ),
                 ],
               ),
@@ -123,7 +125,8 @@ class PersonalInfoScreen extends ConsumerWidget {
                             SizedBox(height: 0.3.h),
                             Text(
                               profile.email.isEmpty
-                                  ? 'No email provided'
+                                  ? AppLocalizations.of(context)!
+                                      .noEmailProvided
                                   : profile.email,
                               style: TextStyle(
                                 fontFamily: GoogleFonts.inter().fontFamily,
@@ -147,11 +150,12 @@ class PersonalInfoScreen extends ConsumerWidget {
                 child: _glassCard(
                   context,
                   child: _buildInfoSection(
-                    title: 'Personal Information',
+                    context,
+                    title: AppLocalizations.of(context)!.personalInfo,
                     items: [
-                      ('Name', profile.name),
-                      ('Surname', profile.surname),
-                      ('Phone', profile.contact),
+                      (AppLocalizations.of(context)!.name, profile.name),
+                      (AppLocalizations.of(context)!.surname, profile.surname),
+                      (AppLocalizations.of(context)!.phone, profile.contact),
                     ],
                   ),
                 ),
@@ -163,12 +167,13 @@ class PersonalInfoScreen extends ConsumerWidget {
                 child: _glassCard(
                   context,
                   child: _buildInfoSection(
-                    title: 'Address',
+                    context,
+                    title: AppLocalizations.of(context)!.address,
                     items: [
-                      ('Address', profile.address),
-                      ('State', profile.state),
-                      ('Country', profile.country),
-                      ('Pin Code', profile.pin),
+                      (AppLocalizations.of(context)!.address, profile.address),
+                      (AppLocalizations.of(context)!.state, profile.state),
+                      (AppLocalizations.of(context)!.country, profile.country),
+                      (AppLocalizations.of(context)!.pinCode, profile.pin),
                     ],
                   ),
                 ),
@@ -178,9 +183,13 @@ class PersonalInfoScreen extends ConsumerWidget {
               _glassCard(
                 context,
                 child: _buildInfoSection(
-                  title: 'Device Information',
+                  context,
+                  title: AppLocalizations.of(context)!.deviceInformation,
                   items: [
-                    ('Date of Purchase', profile.dateOfPurchase),
+                    (
+                      AppLocalizations.of(context)!.dateOfPurchase,
+                      profile.dateOfPurchase
+                    ),
                   ],
                 ),
               ),
@@ -202,7 +211,8 @@ class PersonalInfoScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildInfoSection({
+  Widget _buildInfoSection(
+    BuildContext context, {
     required String title,
     required List<(String, String)> items,
   }) {
@@ -226,7 +236,7 @@ class PersonalInfoScreen extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: items
                   .expand((item) => [
-                        _infoRow(item.$1, item.$2),
+                        _infoRow(context, item.$1, item.$2),
                         if (item != items.last) _divider(),
                       ])
                   .toList(),
@@ -237,7 +247,7 @@ class PersonalInfoScreen extends ConsumerWidget {
     );
   }
 
-  Widget _infoRow(String label, String value) {
+  Widget _infoRow(BuildContext context, String label, String value) {
     return Row(
       children: [
         Expanded(
@@ -255,7 +265,7 @@ class PersonalInfoScreen extends ConsumerWidget {
         Expanded(
           flex: 3,
           child: Text(
-            value.isEmpty ? 'Not provided' : value,
+            value.isEmpty ? AppLocalizations.of(context)!.notProvided : value,
             style: TextStyle(
               fontFamily: GoogleFonts.inter().fontFamily,
               fontSize: 15.sp,

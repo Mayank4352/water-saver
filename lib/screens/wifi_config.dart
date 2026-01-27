@@ -9,6 +9,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/controllers/wifi_smartconfig_controller.dart';
 import 'package:water_saver/models/connection_model.dart';
 import 'package:water_saver/providers/wifi_smartconfig_controller_provider.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class WifiConfigScreen extends ConsumerWidget {
   const WifiConfigScreen({super.key});
@@ -21,9 +22,9 @@ class WifiConfigScreen extends ConsumerWidget {
       backgroundColor: const Color(0xFF071526),
       appBar: AppBar(
         backgroundColor: const Color(0xFF0F1C2E),
-        title: const Text(
-          'Configure Wi-Fi Network',
-          style: TextStyle(color: Colors.white),
+        title: Text(
+          AppLocalizations.of(context)!.configureWiFiNetwork,
+          style: const TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
@@ -51,7 +52,7 @@ class WifiConfigScreen extends ConsumerWidget {
                   return buildWifiErrorPage(context);
                 } else if (error.toString() ==
                     'Exception: No WiFi connection') {
-                  return buildWiFiOffPage();
+                  return buildWiFiOffPage(context);
                 }
                 return Scaffold(
                   backgroundColor: const Color(0xFF071526),
@@ -94,7 +95,7 @@ class WifiConfigScreen extends ConsumerWidget {
               child: Column(
                 children: [
                   Text(
-                    "Wi-Fi Network Details",
+                    AppLocalizations.of(context)!.wifiNetworkDetails,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18.sp,
@@ -107,7 +108,8 @@ class WifiConfigScreen extends ConsumerWidget {
                       const Icon(Icons.wifi, color: Color(0xFF4FC3F7)),
                       SizedBox(width: 2.w),
                       Text(
-                        "Name: ${model.name ?? 'Unknown'}",
+                        AppLocalizations.of(context)!.networkName(model.name ??
+                            AppLocalizations.of(context)!.unknown),
                         style: const TextStyle(color: Colors.white),
                       ),
                     ],
@@ -118,7 +120,8 @@ class WifiConfigScreen extends ConsumerWidget {
                       const Icon(Icons.router, color: Color(0xFF4FC3F7)),
                       SizedBox(width: 2.w),
                       Text(
-                        "BSSID: ${model.bssid ?? 'Unknown'}",
+                        AppLocalizations.of(context)!.bssidLabel(model.bssid ??
+                            AppLocalizations.of(context)!.unknown),
                         style: const TextStyle(color: Colors.white70),
                       ),
                     ],
@@ -129,7 +132,7 @@ class WifiConfigScreen extends ConsumerWidget {
             Column(
               children: [
                 Text(
-                  "Enter Wi-Fi Password",
+                  AppLocalizations.of(context)!.enterWifiPassword,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16.sp,
@@ -144,7 +147,7 @@ class WifiConfigScreen extends ConsumerWidget {
                     obscureText: true,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      hintText: "Enter password",
+                      hintText: AppLocalizations.of(context)!.enterPassword,
                       hintStyle: const TextStyle(color: Colors.white54),
                       filled: true,
                       fillColor: const Color(0xFF0F1C2E),
@@ -185,9 +188,9 @@ class WifiConfigScreen extends ConsumerWidget {
                       if (password.isNotEmpty) {
                         if (password.length < 8) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                  'Password must be at least 8 characters long'),
+                            SnackBar(
+                              content: Text(AppLocalizations.of(context)!
+                                  .passwordTooShort),
                               backgroundColor: Colors.red,
                             ),
                           );
@@ -195,8 +198,9 @@ class WifiConfigScreen extends ConsumerWidget {
                         }
                         controller.startProvisioning(password);
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Configuring device...'),
+                          SnackBar(
+                            content: Text(AppLocalizations.of(context)!
+                                .configuringDevice),
                             backgroundColor: Color(0xFF4ADE80),
                           ),
                         );
@@ -207,15 +211,16 @@ class WifiConfigScreen extends ConsumerWidget {
                         });
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Please enter Wi-Fi password'),
+                          SnackBar(
+                            content: Text(AppLocalizations.of(context)!
+                                .pleaseEnterPassword),
                             backgroundColor: Colors.red,
                           ),
                         );
                       }
                     },
                     child: Text(
-                      'Configure Device',
+                      AppLocalizations.of(context)!.configureDevice,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.sp,
@@ -226,7 +231,7 @@ class WifiConfigScreen extends ConsumerWidget {
                 ),
                 ElevatedButton(
                     onPressed: () => context.pushReplacement('/home'),
-                    child: const Text('Go to Home'))
+                    child: Text(AppLocalizations.of(context)!.goToHome))
               ],
             ),
           ],
@@ -261,7 +266,7 @@ class WifiConfigScreen extends ConsumerWidget {
                   ),
                   SizedBox(height: 2.h),
                   Text(
-                    'Location Permission Required',
+                    AppLocalizations.of(context)!.locationPermissionRequired,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18.sp,
@@ -271,7 +276,7 @@ class WifiConfigScreen extends ConsumerWidget {
                   ),
                   SizedBox(height: 2.h),
                   Text(
-                    'To configure Wi-Fi networks for your device, we need precise location permission.',
+                    AppLocalizations.of(context)!.locationPermissionMessage,
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 14.sp,
@@ -295,7 +300,7 @@ class WifiConfigScreen extends ConsumerWidget {
                     ),
                     onPressed: () async => await openAppSettings(),
                     child: Text(
-                      'Open Settings',
+                      AppLocalizations.of(context)!.openSettings,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.sp,
@@ -312,7 +317,7 @@ class WifiConfigScreen extends ConsumerWidget {
     );
   }
 
-  Widget buildWiFiOffPage() {
+  Widget buildWiFiOffPage(BuildContext context) {
     return Container(
       height: 100.h,
       width: double.infinity,
@@ -338,7 +343,7 @@ class WifiConfigScreen extends ConsumerWidget {
                   ),
                   SizedBox(height: 2.h),
                   Text(
-                    'Wi-Fi is Turned Off',
+                    AppLocalizations.of(context)!.wifiTurnedOff,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18.sp,
@@ -348,7 +353,7 @@ class WifiConfigScreen extends ConsumerWidget {
                   ),
                   SizedBox(height: 2.h),
                   Text(
-                    'Please turn on Wi-Fi to configure your device.',
+                    AppLocalizations.of(context)!.turnOnWifiMessage,
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 14.sp,
@@ -367,7 +372,8 @@ class WifiConfigScreen extends ConsumerWidget {
   Widget buildConnectedDevicePopup(ProvisioningResponse response,
       BuildContext context, WifiSmartConfigController controller) {
     return AlertDialog(
-      content: Text("Device ${response.bssidText} is connected to the Wi-Fi"),
+      content: Text(
+          AppLocalizations.of(context)!.deviceConnected(response.bssidText)),
       actions: [
         TextButton(
           onPressed: () {
@@ -375,7 +381,7 @@ class WifiConfigScreen extends ConsumerWidget {
 
             context.pushReplacement('/calibration');
           },
-          child: const Text("OK"),
+          child: Text(AppLocalizations.of(context)!.ok),
         ),
       ],
     );

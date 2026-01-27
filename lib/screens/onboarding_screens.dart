@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:onboarding/onboarding.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class OnboardingScreens extends StatelessWidget {
   const OnboardingScreens({super.key});
@@ -15,7 +16,9 @@ class OnboardingScreens extends StatelessWidget {
       await GetIt.I<FlutterSecureStorage>()
           .write(key: "isOnboardingComplete", value: 'true');
     } catch (e) {
-      messenger.showSnackBar(SnackBar(content: Text('Some error occurred $e')));
+      messenger.showSnackBar(SnackBar(
+          content: Text(
+              AppLocalizations.of(context)!.someErrorOccurred(e.toString()))));
     }
     router.go('/login');
   }
@@ -61,9 +64,10 @@ class OnboardingScreens extends StatelessWidget {
                 onPressed: () async {
                   handlePostOnboarding(context);
                 },
-                child: const Text(
-                  'Skip',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                child: Text(
+                  AppLocalizations.of(context)!.skip,
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
             ),
@@ -99,9 +103,10 @@ class OnboardingScreens extends StatelessWidget {
                   }
                   setIndex(currentIndex + 1);
                 },
-                child: const Text(
-                  'Continue',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                child: Text(
+                  AppLocalizations.of(context)!.continueButton,
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
             ),

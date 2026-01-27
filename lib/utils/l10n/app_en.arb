@@ -1,0 +1,507 @@
+{
+  "@@locale": "en",
+  "appTitle": "Water Saver",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "welcome": "Welcome",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login button text"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button text"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home page title"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile page title"
+  },
+  "personalInfo": "Personal Information",
+  "@personalInfo": {
+    "description": "Personal information page title"
+  },
+  "wifiConfig": "WiFi Configuration",
+  "@wifiConfig": {
+    "description": "WiFi configuration page title"
+  },
+  "calibration": "Calibration",
+  "@calibration": {
+    "description": "Calibration page title"
+  },
+  "onboarding": "Onboarding",
+  "@onboarding": {
+    "description": "Onboarding page title"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button text"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading indicator text"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error message"
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Success message"
+  },
+  "letsGetStarted": "Let's Get Started!",
+  "@letsGetStarted": {
+    "description": "Login screen title"
+  },
+  "letsDiveIn": "Let's dive in into your account",
+  "@letsDiveIn": {
+    "description": "Login screen subtitle"
+  },
+  "privacyPolicy": "Privacy Policy  ·  Terms of Service",
+  "@privacyPolicy": {
+    "description": "Privacy policy text"
+  },
+  "userDoesNotExist": "User does not exist",
+  "@userDoesNotExist": {
+    "description": "Error when user not found"
+  },
+  "loginFailed": "Login failed",
+  "@loginFailed": {
+    "description": "Login failure message"
+  },
+  "adjustments": "Adjustments",
+  "@adjustments": {
+    "description": "Adjustments page title"
+  },
+  "fillRequiredDetails": "Kindly fill the required details below",
+  "@fillRequiredDetails": {
+    "description": "Instruction text"
+  },
+  "roofTopTank": "Roof Top Tank",
+  "@roofTopTank": {
+    "description": "Tank name"
+  },
+  "reservoir": "Reservoir",
+  "@reservoir": {
+    "description": "Reservoir name"
+  },
+  "analysis": "Analysis",
+  "@analysis": {
+    "description": "Analysis page title"
+  },
+  "errorWithMessage": "Error: {message}",
+  "@errorWithMessage": {
+    "description": "Error with dynamic message",
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "calibrationMessage": "Keep the system idle. We are calibrating your tank...\nThis may take a few moments.",
+  "@calibrationMessage": {
+    "description": "Calibration instruction message"
+  },
+  "skip": "Skip",
+  "@skip": {
+    "description": "Skip button"
+  },
+  "continueButton": "Continue",
+  "@continueButton": {
+    "description": "Continue button"
+  },
+  "someErrorOccurred": "Some error occurred {error}",
+  "@someErrorOccurred": {
+    "description": "Generic error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "notProvided": "Not provided",
+  "@notProvided": {
+    "description": "When data is not available"
+  },
+  "configureWiFiNetwork": "Configure Wi-Fi Network",
+  "@configureWiFiNetwork": {
+    "description": "WiFi config page title"
+  },
+  "initializingUserData": "Initializing user data...",
+  "@initializingUserData": {
+    "description": "Splash screen loading message"
+  },
+  "autoMode": "Auto Mode",
+  "@autoMode": {
+    "description": "Auto mode text"
+  },
+  "manualMode": "Manual Mode",
+  "@manualMode": {
+    "description": "Manual mode text"
+  },
+  "deviceConnected": "Device {bssid} is connected to the Wi-Fi",
+  "@deviceConnected": {
+    "description": "Device connected message",
+    "placeholders": {
+      "bssid": {
+        "type": "String"
+      }
+    }
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button"
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Confirm dialog title"
+  },
+  "yes": "Yes",
+  "@yes": {
+    "description": "Yes button"
+  },
+  "no": "No",
+  "@no": {
+    "description": "No button"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Name label"
+  },
+  "surname": "Surname",
+  "@surname": {
+    "description": "Surname label"
+  },
+  "phone": "Phone",
+  "@phone": {
+    "description": "Phone label"
+  },
+  "address": "Address",
+  "@address": {
+    "description": "Address label"
+  },
+  "state": "State",
+  "@state": {
+    "description": "State label"
+  },
+  "country": "Country",
+  "@country": {
+    "description": "Country label"
+  },
+  "pinCode": "Pin Code",
+  "@pinCode": {
+    "description": "Pin code label"
+  },
+  "deviceInformation": "Device Information",
+  "@deviceInformation": {
+    "description": "Device information section title"
+  },
+  "dateOfPurchase": "Date of Purchase",
+  "@dateOfPurchase": {
+    "description": "Date of purchase label"
+  },
+  "noEmailProvided": "No email provided",
+  "@noEmailProvided": {
+    "description": "When email is not available"
+  },
+  "retryButton": "Retry",
+  "@retryButton": {
+    "description": "Retry button"
+  },
+  "savingUnsuccessful": "Saving unsuccessful",
+  "@savingUnsuccessful": {
+    "description": "Saving unsuccessful message"
+  },
+  "savingSuccessful": "Saved Successfully!",
+  "@savingSuccessful": {
+    "description": "Saving successful message"
+  },
+  "notAllowed": "Not Allowed",
+  "@notAllowed": {
+    "description": "Not allowed dialog title"
+  },
+  "cannotPerformInManualMode": "This action cannot be performed in Manual mode.",
+  "@cannotPerformInManualMode": {
+    "description": "Manual mode restriction message"
+  },
+  "manualOnLimitReached": "Manual ON limit reached (3 times/24h). Try later.",
+  "@manualOnLimitReached": {
+    "description": "Motor manual limit message"
+  },
+  "autoModeTurnedOff": "Auto Mode turned OFF",
+  "@autoModeTurnedOff": {
+    "description": "Auto mode off message"
+  },
+  "autoModeTurnedOn": "Auto Mode turned ON",
+  "@autoModeTurnedOn": {
+    "description": "Auto mode on message"
+  },
+  "warning": "Warning",
+  "@warning": {
+    "description": "Warning dialog title"
+  },
+  "autoModeDisableWarning": "You're trying to disable Auto mode which may degrade performance and can damage components.\nWe suggest adjusting thresholds in the Adjustments page.",
+  "@autoModeDisableWarning": {
+    "description": "Auto mode disable warning message"
+  },
+  "autoModeResponsibility": "I ({userName}) will take responsibility for any damages from turning Auto mode off.",
+  "@autoModeResponsibility": {
+    "description": "Responsibility confirmation text",
+    "placeholders": {
+      "userName": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmAutoModeOff": "Do you really want to turn Auto Mode off?",
+  "@confirmAutoModeOff": {
+    "description": "Confirm auto mode off message"
+  },
+  "personalInfoMenu": "Personal Info",
+  "@personalInfoMenu": {
+    "description": "Personal info menu item"
+  },
+  "reminders": "Reminders",
+  "@reminders": {
+    "description": "Reminders menu item"
+  },
+  "setWiFiNetwork": "Set Wi-Fi Network",
+  "@setWiFiNetwork": {
+    "description": "Set WiFi network menu item"
+  },
+  "accountSecurity": "Account & Security",
+  "@accountSecurity": {
+    "description": "Account and security menu item"
+  },
+  "linkedAccounts": "Linked Accounts",
+  "@linkedAccounts": {
+    "description": "Linked accounts menu item"
+  },
+  "dataAnalytics": "Data & Analytics",
+  "@dataAnalytics": {
+    "description": "Data and analytics menu item"
+  },
+  "helpSupport": "Help & Support",
+  "@helpSupport": {
+    "description": "Help and support menu item"
+  },
+  "logoutFailed": "Logout failed",
+  "@logoutFailed": {
+    "description": "Logout failed message"
+  },
+  "wifiNetworkDetails": "Wi-Fi Network Details",
+  "@wifiNetworkDetails": {
+    "description": "WiFi network details header"
+  },
+  "networkName": "Name: {name}",
+  "@networkName": {
+    "description": "Network name label",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bssidLabel": "BSSID: {bssid}",
+  "@bssidLabel": {
+    "description": "BSSID label",
+    "placeholders": {
+      "bssid": {
+        "type": "String"
+      }
+    }
+  },
+  "unknown": "Unknown",
+  "@unknown": {
+    "description": "Unknown value placeholder"
+  },
+  "enterWifiPassword": "Enter Wi-Fi Password",
+  "@enterWifiPassword": {
+    "description": "Enter WiFi password label"
+  },
+  "enterPassword": "Enter password",
+  "@enterPassword": {
+    "description": "Enter password hint text"
+  },
+  "passwordTooShort": "Password must be at least 8 characters long",
+  "@passwordTooShort": {
+    "description": "Password length validation message"
+  },
+  "configuringDevice": "Configuring device...",
+  "@configuringDevice": {
+    "description": "Configuring device progress message"
+  },
+  "pleaseEnterPassword": "Please enter Wi-Fi password",
+  "@pleaseEnterPassword": {
+    "description": "Empty password validation message"
+  },
+  "configureDevice": "Configure Device",
+  "@configureDevice": {
+    "description": "Configure device button text"
+  },
+  "goToHome": "Go to Home",
+  "@goToHome": {
+    "description": "Go to home button text"
+  },
+  "locationPermissionRequired": "Location Permission Required",
+  "@locationPermissionRequired": {
+    "description": "Location permission required title"
+  },
+  "locationPermissionMessage": "To configure Wi-Fi networks for your device, we need precise location permission.",
+  "@locationPermissionMessage": {
+    "description": "Location permission explanation message"
+  },
+  "openSettings": "Open Settings",
+  "@openSettings": {
+    "description": "Open settings button text"
+  },
+  "wifiTurnedOff": "Wi-Fi is Turned Off",
+  "@wifiTurnedOff": {
+    "description": "WiFi turned off title"
+  },
+  "turnOnWifiMessage": "Please turn on Wi-Fi to configure your device.",
+  "@turnOnWifiMessage": {
+    "description": "Turn on WiFi message"
+  },
+  "motorOffThreshold": "Level Threshold: Motor Off",
+  "@motorOffThreshold": {
+    "description": "Motor off threshold label"
+  },
+  "motorOnThreshold": "Level Threshold: Motor On",
+  "@motorOnThreshold": {
+    "description": "Motor on threshold label"
+  },
+  "thresholdValidation": "Motor off threshold must be greater than motor on threshold",
+  "@thresholdValidation": {
+    "description": "Tank threshold validation error message"
+  },
+  "pumpOnOffNormally": "Pump On and off normally",
+  "@pumpOnOffNormally": {
+    "description": "Graph legend for normal pump operation"
+  },
+  "powerFailureDuringPumpOn": "Power failure during Pump: ON",
+  "@powerFailureDuringPumpOn": {
+    "description": "Graph legend for power failure"
+  },
+  "pumpCurrentlyOn": "At present the Pump is ON",
+  "@pumpCurrentlyOn": {
+    "description": "Graph legend for current pump state"
+  },
+  "pumpActivity": "Pump Activity",
+  "@pumpActivity": {
+    "description": "Pump activity graph title"
+  },
+  "motorOn": "Motor ON",
+  "@motorOn": {
+    "description": "Motor on status"
+  },
+  "motorOff": "Motor OFF",
+  "@motorOff": {
+    "description": "Motor off status"
+  },
+  "monday": "Mon",
+  "@monday": {
+    "description": "Monday short label"
+  },
+  "tuesday": "Tue",
+  "@tuesday": {
+    "description": "Tuesday short label"
+  },
+  "wednesday": "Wed",
+  "@wednesday": {
+    "description": "Wednesday short label"
+  },
+  "thursday": "Thu",
+  "@thursday": {
+    "description": "Thursday short label"
+  },
+  "friday": "Fri",
+  "@friday": {
+    "description": "Friday short label"
+  },
+  "saturday": "Sat",
+  "@saturday": {
+    "description": "Saturday short label"
+  },
+  "sunday": "Sun",
+  "@sunday": {
+    "description": "Sunday short label"
+  },
+  "upperLowerThreshold": "Upper and Lower Threshold",
+  "@upperLowerThreshold": {
+    "description": "Upper and lower threshold graph title"
+  },
+  "lowerThreshold": "Lower Threshold",
+  "@lowerThreshold": {
+    "description": "Lower threshold label"
+  },
+  "upperThreshold": "Upper Threshold",
+  "@upperThreshold": {
+    "description": "Upper threshold label"
+  },
+  "waterConsumption": "Water Consumption",
+  "@waterConsumption": {
+    "description": "Water consumption graph title"
+  },
+  "insights": "Insights",
+  "@insights": {
+    "description": "Insights widget title"
+  },
+  "enoughFor": "Enough for",
+  "@enoughFor": {
+    "description": "Enough for label"
+  },
+  "bucketsCount": "{count} 2L-buckets",
+  "@bucketsCount": {
+    "description": "Buckets count label",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "washingMachinesCount": "{count} washing machines",
+  "@washingMachinesCount": {
+    "description": "Washing machines count label",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "waterControls": "Water Controls",
+  "@waterControls": {
+    "description": "Water controls widget title"
+  },
+  "motor": "Motor",
+  "@motor": {
+    "description": "Motor label"
+  },
+  "volume": "volume",
+  "@volume": {
+    "description": "Volume label"
+  },
+  "fromTheBottom": "from the bottom",
+  "@fromTheBottom": {
+    "description": "From the bottom label"
+  },
+  "filled": "filled",
+  "@filled": {
+    "description": "Filled label"
+  }
+}

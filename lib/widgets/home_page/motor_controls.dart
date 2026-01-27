@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:liquid_glass_renderer/liquid_glass_renderer.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-
 import 'package:google_fonts/google_fonts.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 import 'package:water_saver/widgets/home_page/control_switch.dart';
 
 class MotorControlsWidget extends StatelessWidget {
@@ -44,7 +44,7 @@ class MotorControlsWidget extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       horizontal: constraints.maxWidth * 0.05),
                   child: Text(
-                    'Water Controls',
+                    AppLocalizations.of(context)!.waterControls,
                     style: TextStyle(
                       fontFamily: GoogleFonts.inter().fontFamily,
                       fontSize: 18.sp,
@@ -74,7 +74,7 @@ class MotorControlsWidget extends StatelessWidget {
                       ),
                       SizedBox(width: constraints.maxWidth * 0.04),
                       Text(
-                        'Motor',
+                        AppLocalizations.of(context)!.motor,
                         style: TextStyle(
                           fontFamily: GoogleFonts.inter().fontFamily,
                           fontSize: 18.sp,
@@ -115,7 +115,7 @@ class MotorControlsWidget extends StatelessWidget {
                       ),
                       SizedBox(width: constraints.maxWidth * 0.04),
                       Text(
-                        'Auto Mode',
+                        AppLocalizations.of(context)!.autoMode,
                         style: TextStyle(
                           fontFamily: GoogleFonts.inter().fontFamily,
                           fontSize: 18.sp,

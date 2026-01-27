@@ -1,0 +1,507 @@
+{
+  "@@locale": "hi",
+  "appTitle": "जल सेवर",
+  "@appTitle": {
+    "description": "एप्लिकेशन का शीर्षक"
+  },
+  "welcome": "स्वागत है",
+  "@welcome": {
+    "description": "स्वागत संदेश"
+  },
+  "login": "लॉगिन",
+  "@login": {
+    "description": "लॉगिन बटन टेक्स्ट"
+  },
+  "logout": "लॉगआउट",
+  "@logout": {
+    "description": "लॉगआउट बटन टेक्स्ट"
+  },
+  "settings": "सेटिंग्स",
+  "@settings": {
+    "description": "सेटिंग्स पेज शीर्षक"
+  },
+  "home": "होम",
+  "@home": {
+    "description": "होम पेज शीर्षक"
+  },
+  "profile": "प्रोफ़ाइल",
+  "@profile": {
+    "description": "प्रोफ़ाइल पेज शीर्षक"
+  },
+  "personalInfo": "व्यक्तिगत जानकारी",
+  "@personalInfo": {
+    "description": "व्यक्तिगत जानकारी पेज शीर्षक"
+  },
+  "wifiConfig": "WiFi कॉन्फ़िगरेशन",
+  "@wifiConfig": {
+    "description": "WiFi कॉन्फ़िगरेशन पेज शीर्षक"
+  },
+  "calibration": "कैलिब्रेशन",
+  "@calibration": {
+    "description": "कैलिब्रेशन पेज शीर्षक"
+  },
+  "onboarding": "ऑनबोर्डिंग",
+  "@onboarding": {
+    "description": "ऑनबोर्डिंग पेज शीर्षक"
+  },
+  "save": "सहेजें",
+  "@save": {
+    "description": "सेव बटन टेक्स्ट"
+  },
+  "cancel": "रद्द करें",
+  "@cancel": {
+    "description": "कैंसिल बटन टेक्स्ट"
+  },
+  "loading": "लोड हो रहा है...",
+  "@loading": {
+    "description": "लोडिंग संकेतक टेक्स्ट"
+  },
+  "error": "त्रुटि",
+  "@error": {
+    "description": "त्रुटि संदेश"
+  },
+  "success": "सफल",
+  "@success": {
+    "description": "सफलता संदेश"
+  },
+  "letsGetStarted": "चलिए शुरू करते हैं!",
+  "@letsGetStarted": {
+    "description": "लॉगिन स्क्रीन शीर्षक"
+  },
+  "letsDiveIn": "चलिए आपके खाते में प्रवेश करें",
+  "@letsDiveIn": {
+    "description": "लॉगिन स्क्रीन उपशीर्षक"
+  },
+  "privacyPolicy": "गोपनीयता नीति  ·  सेवा की शर्तें",
+  "@privacyPolicy": {
+    "description": "गोपनीयता नीति टेक्स्ट"
+  },
+  "userDoesNotExist": "उपयोगकर्ता मौजूद नहीं है",
+  "@userDoesNotExist": {
+    "description": "उपयोगकर्ता नहीं मिला त्रुटि"
+  },
+  "loginFailed": "लॉगिन विफल रहा",
+  "@loginFailed": {
+    "description": "लॉगिन विफलता संदेश"
+  },
+  "adjustments": "समायोजन",
+  "@adjustments": {
+    "description": "समायोजन पेज शीर्षक"
+  },
+  "fillRequiredDetails": "कृपया नीचे आवश्यक विवरण भरें",
+  "@fillRequiredDetails": {
+    "description": "निर्देश टेक्स्ट"
+  },
+  "roofTopTank": "छत की टंकी",
+  "@roofTopTank": {
+    "description": "टंकी का नाम"
+  },
+  "reservoir": "जलाशय",
+  "@reservoir": {
+    "description": "जलाशय का नाम"
+  },
+  "analysis": "विश्लेषण",
+  "@analysis": {
+    "description": "विश्लेषण पेज शीर्षक"
+  },
+  "errorWithMessage": "त्रुटि: {message}",
+  "@errorWithMessage": {
+    "description": "गतिशील संदेश के साथ त्रुटि",
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "calibrationMessage": "सिस्टम को निष्क्रिय रखें। हम आपकी टंकी को कैलिब्रेट कर रहे हैं...\nइसमें कुछ समय लग सकता है।",
+  "@calibrationMessage": {
+    "description": "कैलिब्रेशन निर्देश संदेश"
+  },
+  "skip": "छोड़ें",
+  "@skip": {
+    "description": "छोड़ें बटन"
+  },
+  "continueButton": "जारी रखें",
+  "@continueButton": {
+    "description": "जारी रखें बटन"
+  },
+  "someErrorOccurred": "कुछ त्रुटि हुई {error}",
+  "@someErrorOccurred": {
+    "description": "सामान्य त्रुटि संदेश",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "notProvided": "प्रदान नहीं किया गया",
+  "@notProvided": {
+    "description": "जब डेटा उपलब्ध नहीं है"
+  },
+  "configureWiFiNetwork": "WiFi नेटवर्क कॉन्फ़िगर करें",
+  "@configureWiFiNetwork": {
+    "description": "WiFi कॉन्फ़िग पेज शीर्षक"
+  },
+  "initializingUserData": "उपयोगकर्ता डेटा प्रारंभ हो रहा है...",
+  "@initializingUserData": {
+    "description": "स्प्लैश स्क्रीन लोडिंग संदेश"
+  },
+  "autoMode": "ऑटो मोड",
+  "@autoMode": {
+    "description": "ऑटो मोड टेक्स्ट"
+  },
+  "manualMode": "मैनुअल मोड",
+  "@manualMode": {
+    "description": "मैनुअल मोड टेक्स्ट"
+  },
+  "deviceConnected": "डिवाइस {bssid} Wi-Fi से कनेक्ट हो गया है",
+  "@deviceConnected": {
+    "description": "डिवाइस कनेक्ट संदेश",
+    "placeholders": {
+      "bssid": {
+        "type": "String"
+      }
+    }
+  },
+  "ok": "ठीक है",
+  "@ok": {
+    "description": "ठीक है बटन"
+  },
+  "confirm": "पुष्टि करें",
+  "@confirm": {
+    "description": "पुष्टि संवाद शीर्षक"
+  },
+  "yes": "हाँ",
+  "@yes": {
+    "description": "हाँ बटन"
+  },
+  "no": "नहीं",
+  "@no": {
+    "description": "नहीं बटन"
+  },
+  "name": "नाम",
+  "@name": {
+    "description": "नाम लेबल"
+  },
+  "surname": "उपनाम",
+  "@surname": {
+    "description": "उपनाम लेबल"
+  },
+  "phone": "फ़ोन",
+  "@phone": {
+    "description": "फ़ोन लेबल"
+  },
+  "address": "पता",
+  "@address": {
+    "description": "पता लेबल"
+  },
+  "state": "राज्य",
+  "@state": {
+    "description": "राज्य लेबल"
+  },
+  "country": "देश",
+  "@country": {
+    "description": "देश लेबल"
+  },
+  "pinCode": "पिन कोड",
+  "@pinCode": {
+    "description": "पिन कोड लेबल"
+  },
+  "deviceInformation": "डिवाइस जानकारी",
+  "@deviceInformation": {
+    "description": "डिवाइस जानकारी अनुभाग शीर्षक"
+  },
+  "dateOfPurchase": "खरीद की तारीख",
+  "@dateOfPurchase": {
+    "description": "खरीद की तारीख लेबल"
+  },
+  "noEmailProvided": "ईमेल प्रदान नहीं किया गया",
+  "@noEmailProvided": {
+    "description": "जब ईमेल उपलब्ध नहीं है"
+  },
+  "retryButton": "पुनः प्रयास करें",
+  "@retryButton": {
+    "description": "पुनः प्रयास करें बटन"
+  },
+  "savingUnsuccessful": "सहेजना असफल रहा",
+  "@savingUnsuccessful": {
+    "description": "सहेजने में असफलता संदेश"  
+  },
+  "savingSuccessful": "सफलतापूर्वक सहेजा गया!",
+  "@savingSuccessful": {
+    "description": "सफलतापूर्वक सहेजने का संदेश"
+  },
+  "notAllowed": "अनुमति नहीं है",
+  "@notAllowed": {
+    "description": "अनुमति नहीं संवाद शीर्षक"
+  },
+  "cannotPerformInManualMode": "यह क्रिया मैनुअल मोड में नहीं की जा सकती।",
+  "@cannotPerformInManualMode": {
+    "description": "मैनुअल मोड प्रतिबंध संदेश"
+  },
+  "manualOnLimitReached": "मैनुअल ON सीमा पहुँच गई (3 बार/24 घंटे)। बाद में प्रयास करें।",
+  "@manualOnLimitReached": {
+    "description": "मोटर मैनुअल सीमा संदेश"
+  },
+  "autoModeTurnedOff": "ऑटो मोड बंद हो गया",
+  "@autoModeTurnedOff": {
+    "description": "ऑटो मोड बंद संदेश"
+  },
+  "autoModeTurnedOn": "ऑटो मोड चालू हो गया",
+  "@autoModeTurnedOn": {
+    "description": "ऑटो मोड चालू संदेश"
+  },
+  "warning": "चेतावनी",
+  "@warning": {
+    "description": "चेतावनी संवाद शीर्षक"
+  },
+  "autoModeDisableWarning": "आप ऑटो मोड को अक्षम करने का प्रयास कर रहे हैं जो प्रदर्शन को खराब कर सकता है और घटकों को नुकसान पहुंचा सकता है।\nहम समायोजन पृष्ठ में सीमा को समायोजित करने का सुझाव देते हैं।",
+  "@autoModeDisableWarning": {
+    "description": "ऑटो मोड अक्षम चेतावनी संदेश"
+  },
+  "autoModeResponsibility": "मैं ({userName}) ऑटो मोड बंद करने से होने वाले किसी भी नुकसान की जिम्मेदारी लूंगा/लूंगी।",
+  "@autoModeResponsibility": {
+    "description": "जिम्मेदारी पुष्टि पाठ",
+    "placeholders": {
+      "userName": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmAutoModeOff": "क्या आप वाकई ऑटो मोड बंद करना चाहते हैं?",
+  "@confirmAutoModeOff": {
+    "description": "ऑटो मोड बंद पुष्टि संदेश"
+  },
+  "personalInfoMenu": "व्यक्तिगत जानकारी",
+  "@personalInfoMenu": {
+    "description": "व्यक्तिगत जानकारी मेनू आइटम"
+  },
+  "reminders": "रिमाइंडर",
+  "@reminders": {
+    "description": "रिमाइंडर मेनू आइटम"
+  },
+  "setWiFiNetwork": "WiFi नेटवर्क सेट करें",
+  "@setWiFiNetwork": {
+    "description": "WiFi नेटवर्क सेट मेनू आइटम"
+  },
+  "accountSecurity": "खाता और सुरक्षा",
+  "@accountSecurity": {
+    "description": "खाता और सुरक्षा मेनू आइटम"
+  },
+  "linkedAccounts": "लिंक किए गए खाते",
+  "@linkedAccounts": {
+    "description": "लिंक किए गए खाते मेनू आइटम"
+  },
+  "dataAnalytics": "डेटा और विश्लेषण",
+  "@dataAnalytics": {
+    "description": "डेटा और विश्लेषण मेनू आइटम"
+  },
+  "helpSupport": "सहायता और समर्थन",
+  "@helpSupport": {
+    "description": "सहायता और समर्थन मेनू आइटम"
+  },
+  "logoutFailed": "लॉगआउट विफल रहा",
+  "@logoutFailed": {
+    "description": "लॉगआउट विफल संदेश"
+  },
+  "wifiNetworkDetails": "Wi-Fi नेटवर्क विवरण",
+  "@wifiNetworkDetails": {
+    "description": "WiFi नेटवर्क विवरण शीर्षक"
+  },
+  "networkName": "नाम: {name}",
+  "@networkName": {
+    "description": "नेटवर्क नाम लेबल",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "bssidLabel": "BSSID: {bssid}",
+  "@bssidLabel": {
+    "description": "BSSID लेबल",
+    "placeholders": {
+      "bssid": {
+        "type": "String"
+      }
+    }
+  },
+  "unknown": "अज्ञात",
+  "@unknown": {
+    "description": "अज्ञात मान प्लेसहोल्डर"
+  },
+  "enterWifiPassword": "Wi-Fi पासवर्ड दर्ज करें",
+  "@enterWifiPassword": {
+    "description": "Wi-Fi पासवर्ड दर्ज करें लेबल"
+  },
+  "enterPassword": "पासवर्ड दर्ज करें",
+  "@enterPassword": {
+    "description": "पासवर्ड दर्ज करें संकेत पाठ"
+  },
+  "passwordTooShort": "पासवर्ड कम से कम 8 अक्षर लंबा होना चाहिए",
+  "@passwordTooShort": {
+    "description": "पासवर्ड लंबाई सत्यापन संदेश"
+  },
+  "configuringDevice": "डिवाइस को कॉन्फ़िगर किया जा रहा है...",
+  "@configuringDevice": {
+    "description": "डिवाइस कॉन्फ़िगर करने की प्रगति संदेश"
+  },
+  "pleaseEnterPassword": "कृपया Wi-Fi पासवर्ड दर्ज करें",
+  "@pleaseEnterPassword": {
+    "description": "खाली पासवर्ड सत्यापन संदेश"
+  },
+  "configureDevice": "डिवाइस कॉन्फ़िगर करें",
+  "@configureDevice": {
+    "description": "डिवाइस कॉन्फ़िगर करें बटन पाठ"
+  },
+  "goToHome": "होम पर जाएं",
+  "@goToHome": {
+    "description": "होम पर जाएं बटन पाठ"
+  },
+  "locationPermissionRequired": "स्थान अनुमति आवश्यक",
+  "@locationPermissionRequired": {
+    "description": "स्थान अनुमति आवश्यक शीर्षक"
+  },
+  "locationPermissionMessage": "आपके डिवाइस के लिए Wi-Fi नेटवर्क को कॉन्फ़िगर करने के लिए, हमें सटीक स्थान अनुमति की आवश्यकता है।",
+  "@locationPermissionMessage": {
+    "description": "स्थान अनुमति स्पष्टीकरण संदेश"
+  },
+  "openSettings": "सेटिंग्स खोलें",
+  "@openSettings": {
+    "description": "सेटिंग्स खोलें बटन पाठ"
+  },
+  "wifiTurnedOff": "Wi-Fi बंद है",
+  "@wifiTurnedOff": {
+    "description": "WiFi बंद शीर्षक"
+  },
+  "turnOnWifiMessage": "कृपया अपने डिवाइस को कॉन्फ़िगर करने के लिए Wi-Fi चालू करें।",
+  "@turnOnWifiMessage": {
+    "description": "Wi-Fi चालू करें संदेश"
+  },
+  "motorOffThreshold": "स्तर सीमा: मोटर बंद",
+  "@motorOffThreshold": {
+    "description": "मोटर बंद सीमा लेबल"
+  },
+  "motorOnThreshold": "स्तर सीमा: मोटर चालू",
+  "@motorOnThreshold": {
+    "description": "मोटर चालू सीमा लेबल"
+  },
+  "thresholdValidation": "मोटर बंद सीमा मोटर चालू सीमा से अधिक होनी चाहिए",
+  "@thresholdValidation": {
+    "description": "टैंक सीमा सत्यापन त्रुटि संदेश"
+  },
+  "pumpOnOffNormally": "पंप सामान्य रूप से चालू और बंद",
+  "@pumpOnOffNormally": {
+    "description": "सामान्य पंप संचालन के लिए ग्राफ़ लीजेंड"
+  },
+  "powerFailureDuringPumpOn": "पंप चालू के दौरान बिजली की विफलता",
+  "@powerFailureDuringPumpOn": {
+    "description": "बिजली की विफलता के लिए ग्राफ़ लीजेंड"
+  },
+  "pumpCurrentlyOn": "वर्तमान में पंप चालू है",
+  "@pumpCurrentlyOn": {
+    "description": "वर्तमान पंप स्थिति के लिए ग्राफ़ लीजेंड"
+  },
+  "pumpActivity": "पंप गतिविधि",
+  "@pumpActivity": {
+    "description": "पंप गतिविधि ग्राफ़ शीर्षक"
+  },
+  "motorOn": "मोटर चालू",
+  "@motorOn": {
+    "description": "मोटर चालू स्थिति"
+  },
+  "motorOff": "मोटर बंद",
+  "@motorOff": {
+    "description": "मोटर बंद स्थिति"
+  },
+  "monday": "सोम",
+  "@monday": {
+    "description": "सोमवार संक्षिप्त लेबल"
+  },
+  "tuesday": "मंगल",
+  "@tuesday": {
+    "description": "मंगलवार संक्षिप्त लेबल"
+  },
+  "wednesday": "बुध",
+  "@wednesday": {
+    "description": "बुधवार संक्षिप्त लेबल"
+  },
+  "thursday": "गुरु",
+  "@thursday": {
+    "description": "गुरुवार संक्षिप्त लेबल"
+  },
+  "friday": "शुक्र",
+  "@friday": {
+    "description": "शुक्रवार संक्षिप्त लेबल"
+  },
+  "saturday": "शनि",
+  "@saturday": {
+    "description": "शनिवार संक्षिप्त लेबल"
+  },
+  "sunday": "रवि",
+  "@sunday": {
+    "description": "रविवार संक्षिप्त लेबल"
+  },
+  "upperLowerThreshold": "ऊपरी और निचली सीमा",
+  "@upperLowerThreshold": {
+    "description": "ऊपरी और निचली सीमा ग्राफ़ शीर्षक"
+  },
+  "lowerThreshold": "निचली सीमा",
+  "@lowerThreshold": {
+    "description": "निचली सीमा लेबल"
+  },
+  "upperThreshold": "ऊपरी सीमा",
+  "@upperThreshold": {
+    "description": "ऊपरी सीमा लेबल"
+  },
+  "waterConsumption": "पानी की खपत",
+  "@waterConsumption": {
+    "description": "पानी की खपत ग्राफ़ शीर्षक"
+  },
+  "insights": "जानकारी",
+  "@insights": {
+    "description": "जानकारी विजेट शीर्षक"
+  },
+  "enoughFor": "के लिए पर्याप्त",
+  "@enoughFor": {
+    "description": "के लिए पर्याप्त लेबल"
+  },
+  "bucketsCount": "{count} 2L-बाल्टियाँ",
+  "@bucketsCount": {
+    "description": "बाल्टी गिनती लेबल",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "washingMachinesCount": "{count} वॉशिंग मशीनें",
+  "@washingMachinesCount": {
+    "description": "वॉशिंग मशीन गिनती लेबल",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "waterControls": "जल नियंत्रण",
+  "@waterControls": {
+    "description": "जल नियंत्रण विजेट शीर्षक"
+  },
+  "motor": "मोटर",
+  "@motor": {
+    "description": "मोटर लेबल"
+  },
+  "volume": "आयतन",
+  "@volume": {
+    "description": "आयतन लेबल"
+  },
+  "fromTheBottom": "तल से",
+  "@fromTheBottom": {
+    "description": "तल से लेबल"
+  },
+  "filled": "भरा हुआ",
+  "@filled": {
+    "description": "भरा हुआ लेबल"
+  }
+}

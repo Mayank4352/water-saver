@@ -7,7 +7,8 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/controllers/auth_controller.dart';
 import 'package:water_saver/providers/app_user_controller_provider.dart';
 import 'package:water_saver/providers/graph_controller_provider.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
@@ -18,7 +19,7 @@ class SettingsPage extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'Settings',
+          AppLocalizations.of(context)!.settings,
           style: TextStyle(
             fontFamily: GoogleFonts.inter().fontFamily,
             fontSize: 18.sp,
@@ -45,21 +46,21 @@ class SettingsPage extends ConsumerWidget {
                     _buildProfileOption(
                       constraints,
                       icon: Icons.person_outline,
-                      title: 'Personal Info',
+                      title: AppLocalizations.of(context)!.personalInfoMenu,
                       onTap: () => context.push('/personalInfo'),
                     ),
                     _buildDivider(constraints),
                     _buildProfileOption(
                       constraints,
                       icon: Icons.notifications_outlined,
-                      title: 'Reminders',
+                      title: AppLocalizations.of(context)!.reminders,
                       onTap: () {},
                     ),
                     _buildDivider(constraints),
                     _buildProfileOption(
                       constraints,
                       icon: Icons.wifi,
-                      title: 'Set Wi-Fi Network',
+                      title: AppLocalizations.of(context)!.setWiFiNetwork,
                       onTap: () => context.push('/wifiConfig'),
                     ),
                   ],
@@ -72,14 +73,14 @@ class SettingsPage extends ConsumerWidget {
                     _buildProfileOption(
                       constraints,
                       icon: Icons.security_outlined,
-                      title: 'Account & Security',
+                      title: AppLocalizations.of(context)!.accountSecurity,
                       onTap: () {},
                     ),
                     _buildDivider(constraints),
                     _buildProfileOption(
                       constraints,
                       icon: Icons.link_outlined,
-                      title: 'Linked Accounts',
+                      title: AppLocalizations.of(context)!.linkedAccounts,
                       onTap: () {},
                     ),
                   ],
@@ -92,14 +93,14 @@ class SettingsPage extends ConsumerWidget {
                     _buildProfileOption(
                       constraints,
                       icon: Icons.analytics_outlined,
-                      title: 'Data & Analytics',
+                      title: AppLocalizations.of(context)!.dataAnalytics,
                       onTap: () {},
                     ),
                     _buildDivider(constraints),
                     _buildProfileOption(
                       constraints,
                       icon: Icons.help_outline,
-                      title: 'Help & Support',
+                      title: AppLocalizations.of(context)!.helpSupport,
                       onTap: () {},
                     ),
                   ],
@@ -112,7 +113,7 @@ class SettingsPage extends ConsumerWidget {
                     _buildProfileOption(
                       constraints,
                       icon: Icons.logout,
-                      title: 'Logout',
+                      title: AppLocalizations.of(context)!.logout,
                       onTap: () {
                         final router = GoRouter.of(context);
                         final messenger = ScaffoldMessenger.of(context);
@@ -123,7 +124,9 @@ class SettingsPage extends ConsumerWidget {
                             router.go('/login');
                           } else {
                             messenger.showSnackBar(
-                              const SnackBar(content: Text('Logout failed')),
+                              SnackBar(
+                                  content: Text(AppLocalizations.of(context)!
+                                      .logoutFailed)),
                             );
                           }
                         });

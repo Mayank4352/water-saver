@@ -7,7 +7,8 @@ import 'package:go_router/go_router.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/controllers/auth_controller.dart';
 import 'package:water_saver/providers/app_user_controller_provider.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class LoginScreen extends ConsumerWidget {
   LoginScreen({super.key});
@@ -32,7 +33,7 @@ class LoginScreen extends ConsumerWidget {
                   height: 15.h),
               SizedBox(height: 5.w),
               Text(
-                "Let's Get Started!",
+                AppLocalizations.of(context)!.letsGetStarted,
                 style: TextStyle(
                   fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
@@ -40,9 +41,9 @@ class LoginScreen extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                "Let's dive in into your account",
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.letsDiveIn,
+                style: const TextStyle(
                   fontSize: 16,
                   color: AppColors.textGradientColors,
                 ),
@@ -63,8 +64,9 @@ class LoginScreen extends ConsumerWidget {
                               .then((exists) async {
                             if (!exists) {
                               messenger.showSnackBar(
-                                const SnackBar(
-                                    content: Text('User does not exist')),
+                                SnackBar(
+                                    content: Text(AppLocalizations.of(context)!
+                                        .userDoesNotExist)),
                               );
                             } else {
                               try {
@@ -93,7 +95,9 @@ class LoginScreen extends ConsumerWidget {
                           });
                         } else {
                           messenger.showSnackBar(
-                            const SnackBar(content: Text('Login failed')),
+                            SnackBar(
+                                content: Text(
+                                    AppLocalizations.of(context)!.loginFailed)),
                           );
                         }
                       }
@@ -107,9 +111,9 @@ class LoginScreen extends ConsumerWidget {
                 ],
               ),
               const Spacer(),
-              const Text(
-                "Privacy Policy  ·  Terms of Service",
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.privacyPolicy,
+                style: const TextStyle(
                   fontSize: 12,
                   color: Colors.white54,
                 ),

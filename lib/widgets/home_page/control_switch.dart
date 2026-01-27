@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inner_shadow_container/inner_shadow_container.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 
 class ControlSwitch extends StatefulWidget {
   const ControlSwitch(

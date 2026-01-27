@@ -2,7 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 import 'package:water_saver/widgets/home_page/water_tank.dart';
 
 class WaterTankWidget extends StatefulWidget {
@@ -111,7 +112,7 @@ class _WaterTankWidgetState extends State<WaterTankWidget>
                         ),
                       ),
                       Text(
-                        'volume',
+                        AppLocalizations.of(context)!.volume,
                         style: TextStyle(
                             fontSize: 14.sp,
                             color:
@@ -128,7 +129,7 @@ class _WaterTankWidgetState extends State<WaterTankWidget>
                         ),
                       ),
                       Text(
-                        'from the bottom',
+                        AppLocalizations.of(context)!.fromTheBottom,
                         style: TextStyle(
                             fontSize: 14.sp, fontWeight: FontWeight.w900),
                       ),
@@ -142,7 +143,7 @@ class _WaterTankWidgetState extends State<WaterTankWidget>
                         ),
                       ),
                       Text(
-                        'filled',
+                        AppLocalizations.of(context)!.filled,
                         style: TextStyle(
                             fontSize: 14.sp, fontWeight: FontWeight.w700),
                       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/controllers/graph_controller.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 import 'package:water_saver/models/graph_page_model.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 

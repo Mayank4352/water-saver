@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class GraphLegendWidget extends StatelessWidget {
   const GraphLegendWidget({super.key});
@@ -31,7 +32,7 @@ class GraphLegendWidget extends StatelessWidget {
                 color: Colors.white,
                 size: 16,
               ),
-              title: Text("Pump On and off normally"),
+              title: Text(AppLocalizations.of(context)!.pumpOnOffNormally),
             ),
             ListTile(
               leading: Icon(
@@ -39,7 +40,8 @@ class GraphLegendWidget extends StatelessWidget {
                 color: Colors.red,
                 size: 16,
               ),
-              title: Text("Power failure during Pump: ON"),
+              title:
+                  Text(AppLocalizations.of(context)!.powerFailureDuringPumpOn),
             ),
             ListTile(
               leading: Icon(
@@ -47,7 +49,7 @@ class GraphLegendWidget extends StatelessWidget {
                 color: Colors.yellow,
                 size: 16,
               ),
-              title: Text("At present the Pump is ON"),
+              title: Text(AppLocalizations.of(context)!.pumpCurrentlyOn),
             ),
           ],
         ),

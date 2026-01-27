@@ -8,6 +8,7 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/models/firebase_model.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class CalibrationScreen extends StatefulWidget {
   const CalibrationScreen({super.key});
@@ -77,9 +78,9 @@ class _CalibrationScreenState extends State<CalibrationScreen>
         backgroundColor: bg,
         elevation: 0,
         scrolledUnderElevation: 0,
-        title: const Text(
-          'Calibration',
-          style: TextStyle(color: Colors.white),
+        title: Text(
+          AppLocalizations.of(context)!.calibration,
+          style: const TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
@@ -92,10 +93,10 @@ class _CalibrationScreenState extends State<CalibrationScreen>
               _AnimatedTank(
                   controller: _controller, waterColor: water, rimColor: blue),
               SizedBox(height: 4.h),
-              const Text(
-                'Keep the system idle. We are calibrating your tank...\nThis may take a few moments.',
+              Text(
+                AppLocalizations.of(context)!.calibrationMessage,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white70),
+                style: const TextStyle(color: Colors.white70),
               ),
               SizedBox(height: 3.h),
               const CircularProgressIndicator(color: Colors.white),

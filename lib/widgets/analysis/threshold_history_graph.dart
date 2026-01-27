@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/controllers/graph_controller.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 import 'package:water_saver/models/graph_page_model.dart';
 
 class ThresholdHistoryGraph extends StatelessWidget {
@@ -37,7 +38,7 @@ class ThresholdHistoryGraph extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Upper and Lower Threshold',
+              AppLocalizations.of(context)!.upperLowerThreshold,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
@@ -45,27 +46,27 @@ class ThresholdHistoryGraph extends StatelessWidget {
               ),
             ),
             SizedBox(height: 2.h),
-            _buildFlLineChart(),
+            _buildFlLineChart(context),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildFlLineChart() {
+  Widget _buildFlLineChart(BuildContext context) {
     return SizedBox(
       height: 35.h,
       child: LineChart(
-        motorStateLineChartData,
+        motorStateLineChartData(context),
         duration: const Duration(milliseconds: 250),
       ),
     );
   }
 
-  LineChartData get motorStateLineChartData => LineChartData(
-        lineTouchData: motorLineTouchData,
+  LineChartData motorStateLineChartData(BuildContext context) => LineChartData(
+        lineTouchData: motorLineTouchData(context),
         gridData: motorGridData,
-        titlesData: motorTitlesData,
+        titlesData: motorTitlesData(context),
         borderData: motorBorderData,
         lineBarsData: motorLineBarsData,
         backgroundColor: Colors.transparent,
@@ -75,15 +76,17 @@ class ThresholdHistoryGraph extends StatelessWidget {
         minY: 0,
       );
 
-  LineTouchData get motorLineTouchData => LineTouchData(
+  LineTouchData motorLineTouchData(BuildContext context) => LineTouchData(
         handleBuiltInTouches: true,
         touchTooltipData: LineTouchTooltipData(
           getTooltipColor: (touchedSpot) =>
               Colors.blueGrey.withValues(alpha: 0.8),
           getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
             return touchedBarSpots.map((barSpot) {
-              final isMotorOn = barSpot.barIndex == 0;
-              final status = isMotorOn ? 'Motor ON' : 'Motor OFF';
+              final isLowerThreshold = barSpot.barIndex == 0;
+              final status = isLowerThreshold
+                  ? AppLocalizations.of(context)!.lowerThreshold
+                  : AppLocalizations.of(context)!.upperThreshold;
 
               return LineTooltipItem(
                 '$status\n${barSpot.x}, ${barSpot.y}',
@@ -95,22 +98,30 @@ class ThresholdHistoryGraph extends StatelessWidget {
         ),
       );
 
-  String _getDayLabel(double x) {
-    // Get the last 7 days labels ending with today (e.g., ['Tue', 'Wed', ..., 'Mon'] if today is Mon)
+  String _getDayLabel(BuildContext context, double x) {
+    final localizations = AppLocalizations.of(context)!;
+    final weekdayLabels = [
+      localizations.monday,
+      localizations.tuesday,
+      localizations.wednesday,
+      localizations.thursday,
+      localizations.friday,
+      localizations.saturday,
+      localizations.sunday,
+    ];
+
     List<String> days = List.generate(7, (index) {
       final date = DateTime.now().subtract(Duration(days: 6 - index));
-      // Use DateFormat if you want localized/short names, but for simplicity:
-      const weekdayLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-      // DateTime.weekday: 1=Mon, ..., 7=Sun
       return weekdayLabels[date.weekday - 1];
     });
+
     int dayIndex = (x.toInt()).clamp(0, 6);
     return days[dayIndex];
   }
 
-  FlTitlesData get motorTitlesData => FlTitlesData(
+  FlTitlesData motorTitlesData(BuildContext context) => FlTitlesData(
         bottomTitles: AxisTitles(
-          sideTitles: thresholdBottomTitles,
+          sideTitles: thresholdBottomTitles(context),
         ),
         rightTitles: const AxisTitles(
           sideTitles: SideTitles(showTitles: false),
@@ -140,7 +151,7 @@ class ThresholdHistoryGraph extends StatelessWidget {
         reservedSize: 45,
       );
 
-  SideTitles get thresholdBottomTitles => SideTitles(
+  SideTitles thresholdBottomTitles(BuildContext context) => SideTitles(
         showTitles: true,
         reservedSize: 32,
         interval: _getBottomTitleInterval(),
@@ -151,7 +162,7 @@ class ThresholdHistoryGraph extends StatelessWidget {
             fontSize: 12,
           );
 
-          String text = _getBottomTitleText(value);
+          String text = _getBottomTitleText(context, value);
           return Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Text(text, style: style),
@@ -238,10 +249,10 @@ class ThresholdHistoryGraph extends StatelessWidget {
     }
   }
 
-  String _getBottomTitleText(double value) {
+  String _getBottomTitleText(BuildContext context, double value) {
     switch (pageData.selectedPeriod) {
       case SelectedPeriod.week:
-        return _getDayLabel(value);
+        return _getDayLabel(context, value);
       case SelectedPeriod.fifteenDays:
         return '${value.toInt()}';
       case SelectedPeriod.month:

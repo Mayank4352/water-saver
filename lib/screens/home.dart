@@ -6,10 +6,11 @@ import 'package:water_saver/controllers/app_user_controller.dart';
 import 'package:water_saver/models/app_user.dart';
 import 'package:water_saver/providers/app_user_controller_provider.dart';
 import 'package:water_saver/models/user_data_upload.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 import 'package:water_saver/widgets/home_page/tank_widget.dart';
 import 'package:water_saver/widgets/home_page/motor_controls.dart';
 import 'package:water_saver/widgets/home_page/insights.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -71,7 +72,8 @@ class _HomePageState extends ConsumerState<HomePage> {
               backgroundColor: Colors.transparent,
               body: Center(
                 child: Text(
-                  'Error: $error',
+                  AppLocalizations.of(context)!
+                      .errorWithMessage(error.toString()),
                   style: const TextStyle(color: Colors.white),
                 ),
               ),
@@ -111,7 +113,7 @@ class _HomePageState extends ConsumerState<HomePage> {
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         title: Text(
-          'Home',
+          AppLocalizations.of(context)!.home,
           style: TextStyle(
               // fontSize: 14.sp,
               color: AppColors.textGradientColors,
@@ -145,18 +147,19 @@ class _HomePageState extends ConsumerState<HomePage> {
                     context: context,
                     builder: (ctx) => AlertDialog(
                       backgroundColor: const Color(0xFF0F1C2E),
-                      title: const Text('Not Allowed',
-                          style: TextStyle(color: Colors.white)),
-                      content: const Text(
-                          'This action cannot be performed in Mannual mode.',
-                          style: TextStyle(color: Color(0xFFE2E8F0))),
+                      title: Text(AppLocalizations.of(context)!.notAllowed,
+                          style: const TextStyle(color: Colors.white)),
+                      content: Text(
+                          AppLocalizations.of(context)!
+                              .cannotPerformInManualMode,
+                          style: const TextStyle(color: Color(0xFFE2E8F0))),
                       actions: [
                         TextButton(
                           style: TextButton.styleFrom(
                             foregroundColor: const Color(0xFF4ADE80),
                           ),
                           onPressed: () => Navigator.of(ctx).pop(),
-                          child: const Text('Ok'),
+                          child: Text(AppLocalizations.of(context)!.ok),
                         ),
                       ],
                     ),
@@ -171,9 +174,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                   if (!allowed) {
                     if (!mounted) return;
                     messenger.showSnackBar(
-                      const SnackBar(
+                      SnackBar(
                         content: Text(
-                            'Manual ON limit reached (3 times/24h). Try later.'),
+                            AppLocalizations.of(context)!.manualOnLimitReached),
                       ),
                     );
                     return;
@@ -204,7 +207,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                     await appUserController.setAutoMode(false);
                     if (!mounted) return;
                     messenger.showSnackBar(
-                      const SnackBar(content: Text('Auto Mode turned OFF')),
+                      SnackBar(
+                          content: Text(
+                              AppLocalizations.of(context)!.autoModeTurnedOff)),
                     );
                     setState(() => _isAutoMode = false);
                   }
@@ -212,7 +217,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                   await appUserController.setAutoMode(true);
                   if (!mounted) return;
                   messenger.showSnackBar(
-                    const SnackBar(content: Text('Auto Mode turned ON')),
+                    SnackBar(
+                        content: Text(
+                            AppLocalizations.of(context)!.autoModeTurnedOn)),
                   );
                   setState(() => _isAutoMode = true);
                 }
@@ -243,14 +250,15 @@ class _HomePageState extends ConsumerState<HomePage> {
         return StatefulBuilder(builder: (ctx, setState) {
           return AlertDialog(
             backgroundColor: const Color(0xFF0F1C2E),
-            title: const Text('Warning', style: TextStyle(color: Colors.white)),
+            title: Text(AppLocalizations.of(context)!.warning,
+                style: const TextStyle(color: Colors.white)),
             content: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "You're trying to disable Auto mode which may degrade performance and can damage components.\nWe suggest adjusting thresholds in the Adjustments page.",
-                    style: TextStyle(color: Colors.white),
+                  Text(
+                    AppLocalizations.of(context)!.autoModeDisableWarning,
+                    style: const TextStyle(color: Colors.white),
                   ),
                   const SizedBox(height: 12),
                   Row(
@@ -264,7 +272,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                       ),
                       Expanded(
                         child: Text(
-                          'I ($userName) will take responsibility for any damages from turning Auto mode off.',
+                          AppLocalizations.of(context)!
+                              .autoModeResponsibility(userName),
                           style: const TextStyle(color: Color(0xFFEF4444)),
                         ),
                       ),
@@ -279,14 +288,14 @@ class _HomePageState extends ConsumerState<HomePage> {
                   foregroundColor: const Color(0xFF4ADE80),
                 ),
                 onPressed: () => Navigator.of(ctx).pop(false),
-                child: const Text('Cancel'),
+                child: Text(AppLocalizations.of(context)!.cancel),
               ),
               TextButton(
                 style: TextButton.styleFrom(
                   foregroundColor: const Color(0xFFEF4444),
                 ),
                 onPressed: checked ? () => Navigator.of(ctx).pop(true) : null,
-                child: const Text('Save'),
+                child: Text(AppLocalizations.of(context)!.save),
               ),
             ],
           );
@@ -300,23 +309,24 @@ class _HomePageState extends ConsumerState<HomePage> {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: const Color(0xFF0F1C2E),
-        title: const Text('Confirm', style: TextStyle(color: Colors.white)),
-        content: const Text('Do you really want to turn Auto Mode off?',
-            style: TextStyle(color: Colors.white)),
+        title: Text(AppLocalizations.of(context)!.confirm,
+            style: const TextStyle(color: Colors.white)),
+        content: Text(AppLocalizations.of(context)!.confirmAutoModeOff,
+            style: const TextStyle(color: Colors.white)),
         actions: [
           TextButton(
             style: TextButton.styleFrom(
               foregroundColor: const Color(0xFF4ADE80),
             ),
             onPressed: () => Navigator.of(ctx).pop(false),
-            child: const Text('No'),
+            child: Text(AppLocalizations.of(context)!.no),
           ),
           TextButton(
             style: TextButton.styleFrom(
               foregroundColor: const Color(0xFFEF4444),
             ),
             onPressed: () => Navigator.of(ctx).pop(true),
-            child: const Text('Yes'),
+            child: Text(AppLocalizations.of(context)!.yes),
           ),
         ],
       ),

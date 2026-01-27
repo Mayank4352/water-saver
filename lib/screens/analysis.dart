@@ -3,14 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:water_saver/controllers/graph_controller.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 import 'package:water_saver/models/graph_page_model.dart';
 import 'package:water_saver/providers/graph_controller_provider.dart';
 import 'package:water_saver/widgets/analysis/motor_graph.dart';
 import 'package:water_saver/widgets/analysis/threshold_history_graph.dart';
 import 'package:water_saver/widgets/analysis/water_consumption_graph.dart';
 import 'package:water_saver/widgets/analysis/graph_legend.dart';
-import 'package:water_saver/widgets/analysis/graph_period_controller.dart';
+import 'package:water_saver/controllers/graph_period_controller.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
 
 class AnalysisPage extends ConsumerWidget {
   const AnalysisPage({super.key});
@@ -23,7 +24,7 @@ class AnalysisPage extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'Analysis',
+          AppLocalizations.of(context)!.analysis,
           style: TextStyle(
             fontFamily: GoogleFonts.inter().fontFamily,
             fontSize: 18.sp,
@@ -36,8 +37,10 @@ class AnalysisPage extends ConsumerWidget {
       backgroundColor: Colors.transparent,
       body: pageData.when(
         data: (data) => buildReportBody(controller, data),
-        error: (error, stackTrace) => Center(child: Text('Error: $error')),
-        loading: () => Center(child: CircularProgressIndicator()),
+        error: (error, stackTrace) => Center(
+            child: Text(AppLocalizations.of(context)!
+                .errorWithMessage(error.toString()))),
+        loading: () => const Center(child: CircularProgressIndicator()),
       ),
     );
   }

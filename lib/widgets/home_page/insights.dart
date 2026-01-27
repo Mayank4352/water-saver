@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:liquid_glass_renderer/liquid_glass_renderer.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 
 class InsightsWidget extends StatelessWidget {
   final int buckets;
@@ -35,7 +36,7 @@ class InsightsWidget extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       horizontal: constraints.maxWidth * 0.05),
                   child: Text(
-                    'Insights',
+                    AppLocalizations.of(context)!.insights,
                     style: TextStyle(
                       fontFamily: GoogleFonts.inter().fontFamily,
                       fontSize: 18.sp,
@@ -76,13 +77,14 @@ class InsightsWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Enough for',
+                              AppLocalizations.of(context)!.enoughFor,
                               style: TextStyle(
                                 fontSize: 14.sp,
                               ),
                             ),
                             Text(
-                              '$buckets 2L-buckets',
+                              AppLocalizations.of(context)!
+                                  .bucketsCount(buckets),
                               style: TextStyle(
                                 fontFamily: GoogleFonts.inter().fontFamily,
                                 fontSize: 18.sp,
@@ -126,13 +128,14 @@ class InsightsWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Enough for',
+                              AppLocalizations.of(context)!.enoughFor,
                               style: TextStyle(
                                 fontSize: 14.sp,
                               ),
                             ),
                             Text(
-                              '$washingMachines washing machines',
+                              AppLocalizations.of(context)!
+                                  .washingMachinesCount(washingMachines),
                               style: TextStyle(
                                 fontFamily: GoogleFonts.inter().fontFamily,
                                 fontSize: 18.sp,

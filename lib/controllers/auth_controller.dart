@@ -20,7 +20,6 @@ class AuthController {
         'profile',
         'email',
         'openid',
-        'https://www.googleapis.com/auth/user.phonenumbers.read'
       ]);
 
       final authClient = _googleSignIn.authorizationClient;
@@ -28,7 +27,6 @@ class AuthController {
         'profile',
         'email',
         'openid',
-        'https://www.googleapis.com/auth/user.phonenumbers.read'
       ]);
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: authorization?.accessToken,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_glass_renderer/liquid_glass_renderer.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:water_saver/theme/app_themes.dart';
+import 'package:water_saver/utils/l10n/app_localizations.dart';
+import 'package:water_saver/utils/theme/app_themes.dart';
 import 'package:water_saver/screens/adjustment.dart';
 import 'package:water_saver/screens/home.dart';
 import 'package:water_saver/screens/settings.dart';
@@ -59,14 +60,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
               items: [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home_outlined),
-                  label: 'Home',
+                  label: AppLocalizations.of(context)!.home,
                 ),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.analytics), label: 'Analysis'),
+                    icon: Icon(Icons.analytics),
+                    label: AppLocalizations.of(context)!.analysis),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.handyman), label: 'Adjustments'),
+                    icon: Icon(Icons.handyman),
+                    label: AppLocalizations.of(context)!.adjustments),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.settings), label: 'Settings'),
+                    icon: Icon(Icons.settings),
+                    label: AppLocalizations.of(context)!.settings),
               ],
             ),
           ),
