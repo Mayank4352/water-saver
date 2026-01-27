@@ -40,7 +40,6 @@ class TankSettingsWidget extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("helo"),
               Text(
                 title,
                 style: TextStyle(
